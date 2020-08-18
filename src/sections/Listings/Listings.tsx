@@ -1,5 +1,6 @@
 import React from "react";
 
+import { ListingsData } from "./types";
 import { server } from "../../lib/api";
 
 const LISTINGS = `
@@ -12,6 +13,7 @@ query Listings {
     price
     numOfGuests
     numOfBeds
+    numOfBaths
     rating
   }
 }`;
@@ -22,7 +24,7 @@ interface Props {
 
 export const Listings = ({ title }: Props) => {
   const fetchListings = async () => {
-    const { data } = await server.fetch({ query: LISTINGS });
+    const { data } = await server.fetch<ListingsData>({ query: LISTINGS });
     console.log(data);
   };
 
