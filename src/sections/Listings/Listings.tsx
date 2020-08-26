@@ -37,15 +37,18 @@ interface Props {
 
 export const Listings = ({ title }: Props) => {
   const { data, loading, error, refetch } = useQuery<ListingsData>(LISTINGS);
+
   const [
     deleteListing,
     { loading: deleteListingLoading, error: deleteListingError },
   ] = useMutation<DeleteListingData, DeleteListingVariables>(DELETE_LISTING);
 
   const listings = data ? data.listings : null;
+
   const deleteListingLoadingMessage = deleteListingLoading ? (
     <h4>Deletion in progress...</h4>
   ) : null;
+
   const deleteListingErrorMessage = deleteListingError ? (
     <h4>Uh oh! Something went wrong with deleting - please try again later!</h4>
   ) : null;
