@@ -44,5 +44,6 @@ module.exports = {
     "react-hooks/exhaustive-deps": 2,
     "simple-import-sort/sort": "error",
     "@typescript-eslint/explicit-function-return-type": "off",
+    "react/jsx-key": "off",
   },
 };
