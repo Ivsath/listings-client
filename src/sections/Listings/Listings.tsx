@@ -1,15 +1,16 @@
-import React from "react";
-import { gql } from "apollo-boost";
-import { Alert, List, Avatar, Button, Spin } from "antd";
+import "./styles/Listings.css";
 
-import { useQuery, useMutation } from "react-apollo";
-import { Listings as ListingsData } from "./__generated__/Listings";
+import { Alert, Avatar, Button, List, Spin } from "antd";
+import { gql } from "apollo-boost";
+import React from "react";
+import { useMutation, useQuery } from "react-apollo";
+
 import {
   DeleteListing as DeleteListingData,
   DeleteListingVariables,
 } from "./__generated__/DeleteListing";
+import { Listings as ListingsData } from "./__generated__/Listings";
 import { ListingsSkeleton } from "./components";
-import "./styles/Listings.css";
 
 const LISTINGS = gql`
   query Listings {
@@ -71,12 +72,10 @@ export const Listings = ({ title }: Props) => {
           actions={[
             <Button
               type="primary"
-              onClick={() => handleDeleteListing(listing.id)}
-            >
+              onClick={() => handleDeleteListing(listing.id)}>
               Delete
             </Button>,
-          ]}
-        >
+          ]}>
           <List.Item.Meta
             title={listing.title}
             description={listing.address}

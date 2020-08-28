@@ -1,7 +1,7 @@
-import React from "react";
-import { Alert, Skeleton, Divider } from "antd";
-
 import "./styles/ListingsSkeleton.css";
+
+import { Alert, Divider, Skeleton } from "antd";
+import React from "react";
 
 interface Props {
   title: string;

@@ -1,11 +1,12 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import ApolloClient from "apollo-boost";
-import { ApolloProvider } from "react-apollo";
-
-import * as serviceWorker from "./serviceWorker";
-import { Listings } from "./sections";
 import "./styles/index.css";
+
+import ApolloClient from "apollo-boost";
+import React from "react";
+import { ApolloProvider } from "react-apollo";
+import ReactDOM from "react-dom";
+
+import { Listings } from "./sections";
+import * as serviceWorker from "./serviceWorker";
 
 const client = new ApolloClient({
   uri: "/api",
@@ -17,7 +18,7 @@ ReactDOM.render(
       <Listings title="Listings Title" />
     </ApolloProvider>
   </React.StrictMode>,
-  document.getElementById("root")
+  document.getElementById("root"),
 );
 
 // If you want your app to work offline and load faster, you can change
