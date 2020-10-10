@@ -1,9 +1,8 @@
 import "./styles/Listings.css";
 
+import { gql, useMutation, useQuery } from "@apollo/client";
 import { Alert, Avatar, Button, List, Spin } from "antd";
-import { gql } from "apollo-boost";
 import React from "react";
-import { useMutation, useQuery } from "react-apollo";
 
 import {
   DeleteListing as DeleteListingData,

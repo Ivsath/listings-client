@@ -1,8 +1,7 @@
 import "./styles/index.css";
 
-import ApolloClient from "apollo-boost";
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import React from "react";
-import { ApolloProvider } from "react-apollo";
 import ReactDOM from "react-dom";
 
 import { Listings } from "./sections";
@@ -10,6 +9,7 @@ import * as serviceWorker from "./serviceWorker";
 
 const client = new ApolloClient({
   uri: "/api",
+  cache: new InMemoryCache(),
 });
 
 ReactDOM.render(
